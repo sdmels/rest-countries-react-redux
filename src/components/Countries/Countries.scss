@@ -1,0 +1,11 @@
+@import './../../styles/mixins/rem-calc';
+@import './../../styles/variables';
+
+.countries {
+  background-color: $light-mode-background-color;
+
+  &__filter-box {
+    border: 1px solid;
+    padding: rem-calc(50px);
+  }
+}

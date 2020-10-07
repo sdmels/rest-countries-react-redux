@@ -1,14 +1,24 @@
 import React from 'react';
-import Dashboard from './Dashboard';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Countries from './Countries/Countries';
+import Country from './Countries/Country';
+import Header from '../shared/Header';
+import NoMatch from './NoMatch';
 
 function App() {
   return (
     <>
-      <header>Header</header>
+      <Header />
       <main>
-        <Dashboard />
+        <Router>
+          <Switch>
+            <Route path="/" exact component={Countries} />
+            <Route path="/country/:countryCode" exact component={Country} />
+            <Route component={NoMatch} />
+          </Switch>
+        </Router>
       </main>
-      <footer>footer</footer>
     </>
   );
 }

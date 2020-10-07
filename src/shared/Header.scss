@@ -1,0 +1,47 @@
+@import '../styles/mixins/rem-calc';
+@import '../styles/variables';
+
+.header {
+  background-color: $white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.09), 0 rem-calc(7px) rem-calc(8px) rgba(0, 0, 0, 0.05);
+  .title {
+    margin-bottom: 0;
+    font-size: rem-calc(24px);
+  }
+}
+
+.button {
+  display: flex;
+  color: $light-mode-text-color;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 0;
+  font-size: rem-calc(18px);
+  padding: rem-calc(6px) rem-calc(12px);
+  align-items: center;
+  user-select: none;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:disabled {
+    opacity: 0.65;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $light-mode-background-color;
+  }
+}
+
+.icon {
+  margin-right: 10px;
+}

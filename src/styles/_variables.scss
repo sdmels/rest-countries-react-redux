@@ -1,0 +1,20 @@
+@import './mixins/rem-calc';
+
+$font-size-base: rem-calc(14px);
+$line-height-base: 1.6;
+
+$mobile-breakpoint: rem-calc(375px);
+$tablet-breakpoint: rem-calc(768px);
+$desktop-breakpoint: rem-calc(1440px);
+
+$dark-mode: hsl(209, 23%, 22%);
+$dark-mode-background-color: hsl(207, 26%, 17%);
+$light-mode-text-color: hsl(200, 15%, 8%);
+$light-mode-input-color: hsl(0, 0%, 52%);
+$light-mode-background-color: hsl(0, 0%, 98%);
+$white: hsl(0, 0, 100%);
+
+$font-family-base: 'Nunito Sans', sans-serif;
+$font-weight-light: 300;
+$font-weight-bold: 600;
+$font-weight-bolder: 800;

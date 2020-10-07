@@ -1,0 +1,32 @@
+@import './../../styles/mixins/rem-calc';
+@import './../../styles/variables';
+
+.search_box_group {
+  height: rem-calc(50px);
+  width: 45%;
+  display: flex;
+  align-items: center;
+  background-color: $white;
+  //   box-shadow: 0 0 0px 1px hsl(0, 19%, 92%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
+
+  svg {
+    margin: 0 1rem;
+    opacity: 0.4;
+    fill: $light-mode-input-color;
+  }
+
+  input {
+    height: 100%;
+    width: 100%;
+    padding-right: rem-calc(12px);
+    border: 0;
+    color: $light-mode-input-color;
+    font-size: 14px;
+
+    &:active,
+    &:focus {
+      outline: 0;
+    }
+  }
+}
