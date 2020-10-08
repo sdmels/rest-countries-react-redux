@@ -13,8 +13,7 @@ const Countries = () => {
     let filteredCountries = countries;
     if (text) {
       filteredCountries = filteredCountries.filter((country) => {
-        debugger;
-        if (country.name.indexOf(text) !== -1) {
+        if (country.name.toLowerCase().indexOf(text.toLowerCase()) !== -1) {
           return country;
         }
 
@@ -24,7 +23,7 @@ const Countries = () => {
 
     if (filter) {
       filteredCountries = filteredCountries.filter((country) => {
-        if (country.region.indexOf(filter) !== -1) {
+        if (country.region.toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
           return country;
         }
 
