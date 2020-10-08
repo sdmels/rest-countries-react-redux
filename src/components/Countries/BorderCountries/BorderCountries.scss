@@ -1,10 +1,18 @@
 @import '../../../styles/mixins/rem-calc';
+@import '../../../styles/mixins/breakpoint';
 @import '../../../styles/variables';
 
 .border-countries {
   display: flex;
   align-items: flex-start;
   margin-top: 1rem;
+
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    strong {
+      margin-bottom: 1rem;
+    }
+  }
 
   strong {
     min-width: rem-calc(150px);

@@ -1,9 +1,18 @@
 @import './../../styles/mixins/rem-calc';
+@import './../../styles/mixins/breakpoint';
 @import './../../styles/variables';
 
 .country-detail {
   &__box {
     padding: rem-calc(40px) 0;
+
+    @include breakpoint(mobile) {
+      padding: rem-calc(20px) 0;
+    }
+
+    @include breakpoint(tablet) {
+      padding: rem-calc(20px) 0;
+    }
   }
 
   &__back-button {
@@ -37,9 +46,18 @@
     height: rem-calc(400px);
     align-items: center;
 
+    @include breakpoint(mobile) {
+      flex-direction: column;
+      height: 100%;
+    }
+
     &-left {
       display: flex;
       flex-basis: 50%;
+
+      @include breakpoint(mobile) {
+        width: 100%;
+      }
 
       img {
         max-width: rem-calc(500px);
@@ -47,6 +65,10 @@
         height: 100%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
         margin-right: 2rem;
+
+        @include breakpoint(mobile) {
+          margin: 0 0 1.5rem 0;
+        }
       }
     }
     &-right {
@@ -54,11 +76,28 @@
       flex-basis: 50%;
       flex-direction: column;
 
+      @include breakpoint(mobile) {
+        flex-direction: column;
+        flex-basis: auto;
+        width: 100%;
+
+        .row {
+          padding: 0;
+          flex-direction: column;
+          width: 100%;
+        }
+      }
+
       .row {
         padding-left: 0;
       }
       .col {
         width: 50%;
+
+        @include breakpoint(mobile) {
+          width: 100%;
+          margin-bottom: 1.5rem;
+        }
       }
     }
   }

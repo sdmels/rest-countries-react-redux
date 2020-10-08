@@ -1,13 +1,30 @@
 @import '../../../styles/mixins/rem-calc';
+@import '../../../styles/mixins/breakpoint';
 @import '../../../styles/variables';
 
 .search_box_group {
   height: rem-calc(50px);
   width: 35%;
   display: flex;
+  flex-direction: row;
   align-items: center;
   background-color: $white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
+
+  @include breakpoint(mobile) {
+    .row {
+      flex-direction: column;
+    }
+    width: 100%;
+    margin-bottom: rem-calc(12px);
+  }
+
+  // @include breakpoint(tablet) {
+  //   .row {
+  //     flex-direction: row;
+  //   }
+  //   width: 35%;
+  // }
 
   svg {
     margin: 0 1rem;

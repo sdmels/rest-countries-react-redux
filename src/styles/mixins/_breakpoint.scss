@@ -1,4 +1,4 @@
-@import './variables';
+@import './../variables';
 
 @mixin breakpoint($point) {
   @if $point == desktop {
@@ -6,11 +6,11 @@
       @content;
     }
   } @else if $point == tablet {
-    @media (min-width: $tablet-breakpoint) {
+    @media (min-width: $tablet-breakpoint) and (max-width: 980px) {
       @content;
     }
   } @else if $point == mobile {
-    @media (max-width: $desktop-breakpoint) {
+    @media (max-width: $tablet-breakpoint) {
       @content;
     }
   }
