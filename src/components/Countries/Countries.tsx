@@ -8,7 +8,32 @@ import Filter from './Filter/Filter';
 import './Countries.scss';
 
 const Countries = () => {
-  const countries = useSelector((state) => state.countries);
+  const countries = useSelector((state) => {
+    const { countries, text, filter } = state;
+    let filteredCountries = countries;
+    if (text) {
+      filteredCountries = filteredCountries.filter((country) => {
+        debugger;
+        if (country.name.indexOf(text) !== -1) {
+          return country;
+        }
+
+        return false;
+      });
+    }
+
+    if (filter) {
+      filteredCountries = filteredCountries.filter((country) => {
+        if (country.region.indexOf(filter) !== -1) {
+          return country;
+        }
+
+        return false;
+      });
+    }
+
+    return filteredCountries;
+  });
 
   return (
     <div className="container countries">

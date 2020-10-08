@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setVisibilityFilter } from './../../../actions/visibilityFilter';
 import { FaAngleDown } from 'react-icons/fa';
 
 import './Filter.scss';
@@ -6,6 +8,7 @@ import './Filter.scss';
 const REGIONS = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
 const Filter = () => {
+  const dispatch = useDispatch();
   const filterRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedRegion, setSelectedRegion] = useState();
@@ -25,6 +28,13 @@ const Filter = () => {
 
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [filterRef, setIsOpen]);
+
+  useEffect(() => {
+    if (!selectedRegion) {
+      return;
+    }
+    dispatch(setVisibilityFilter(selectedRegion));
+  }, [dispatch, selectedRegion]);
 
   const toggleOpen = () => setIsOpen((open) => !open);
 

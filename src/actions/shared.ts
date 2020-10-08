@@ -11,7 +11,7 @@ export const handleInitialData = () => {
         dispatch(fetchCountriesSuccess(countries));
       })
       .catch((error) => {
-        console.log();
+        throw new Error('Error fetching data.');
       });
   };
 };
