@@ -4,6 +4,7 @@ import { setSearchCountry } from './../../../actions/searchCountry';
 import { FaSearch } from 'react-icons/fa';
 
 import './Search.scss';
+import { ThemeConsumer } from '../../../Context/theme';
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -18,17 +19,21 @@ const Search = () => {
   };
 
   return (
-    <div className="search_box_group">
-      <FaSearch size={22} />
-      <input
-        type="text"
-        name="search-country"
-        onChange={handleOnChange}
-        value={searchText}
-        className="search_box__input"
-        placeholder="Search for a country..."
-      />
-    </div>
+    <ThemeConsumer>
+      {(theme) => (
+        <div className={`search_box_group ${theme}`}>
+          <FaSearch size={22} />
+          <input
+            type="text"
+            name="search-country"
+            onChange={handleOnChange}
+            value={searchText}
+            className="search_box__input"
+            placeholder="Search for a country..."
+          />
+        </div>
+      )}
+    </ThemeConsumer>
   );
 };
 

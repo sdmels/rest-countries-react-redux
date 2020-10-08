@@ -1,13 +1,18 @@
 import React from 'react';
+import { ThemeConsumer } from '../../../Context/theme';
 
 import './CountryInfo.scss';
 
 const CountryInfo = ({ label, value }) => {
   return (
-    <div className="country-info">
-      <label>{label}: </label>
-      <span>{value}</span>
-    </div>
+    <ThemeConsumer>
+      {(theme) => (
+        <div className={`country-info ${theme}`}>
+          <label>{label}: </label>
+          <span>{value}</span>
+        </div>
+      )}
+    </ThemeConsumer>
   );
 };
 

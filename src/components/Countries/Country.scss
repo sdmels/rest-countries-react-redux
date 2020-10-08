@@ -2,8 +2,6 @@
 @import './../../styles/variables';
 
 .country-detail {
-  background-color: $light-mode-background-color;
-
   &__box {
     padding: rem-calc(40px) 0;
   }
@@ -25,6 +23,11 @@
     &:active,
     &:focus {
       transform: scale(1.05);
+    }
+
+    &.dark {
+      color: $white;
+      background-color: $dark-mode;
     }
   }
 

@@ -9,6 +9,7 @@ import { Currency } from '../../models/countries';
 
 import './Country.scss';
 import BorderCountries from './BorderCountries/BorderCountries';
+import { ThemeConsumer } from '../../Context/theme';
 
 const Country = () => {
   const { countryCode } = useParams();
@@ -36,49 +37,53 @@ const Country = () => {
   } = country[0];
 
   return (
-    <div className="container country-detail">
-      <div className="row">
-        <div className="country-detail__box">
-          <Link to="/" className="country-detail__back-button">
-            <FaArrowLeft size={14} />
-            Back
-          </Link>
-        </div>
-      </div>
-
-      <div className="row">
-        <div className="country-detail__content">
-          <div className="country-detail__content-left">
-            <img src={flag} alt={`Country flag of ${name}`} />
+    <ThemeConsumer>
+      {(theme) => (
+        <div className={`container country-detail ${theme}`}>
+          <div className="row">
+            <div className="country-detail__box">
+              <Link to="/" className={`country-detail__back-button ${theme}`}>
+                <FaArrowLeft size={14} />
+                Back
+              </Link>
+            </div>
           </div>
-          <div className="country-detail__content-right">
-            <h2>{name}</h2>
-            <div className="row">
-              <div className="col">
-                <CountryInfo label="Native name" value={nativeName} />
-                <CountryInfo label="Population" value={Numeral(population).format(0, 0)} />
-                <CountryInfo label="Region" value={region} />
-                <CountryInfo label="Sub Region" value={subregion} />
-                <CountryInfo label="Capital" value={capital} />
+
+          <div className="row">
+            <div className="country-detail__content">
+              <div className="country-detail__content-left">
+                <img src={flag} alt={`Country flag of ${name}`} />
               </div>
-              <div className="col">
-                <CountryInfo label="Top Level Domain" value={topLevelDomain} />
-                <CountryInfo
-                  label="Currencies"
-                  value={currencies.map((currency: Currency) => currency.name).join(', ')}
-                />
-                <CountryInfo
-                  label="Languages"
-                  value={languages.map((language) => language.name).join(', ')}
-                />
+              <div className="country-detail__content-right">
+                <h2>{name}</h2>
+                <div className="row">
+                  <div className="col">
+                    <CountryInfo label="Native name" value={nativeName} />
+                    <CountryInfo label="Population" value={Numeral(population).format(0, 0)} />
+                    <CountryInfo label="Region" value={region} />
+                    <CountryInfo label="Sub Region" value={subregion} />
+                    <CountryInfo label="Capital" value={capital} />
+                  </div>
+                  <div className="col">
+                    <CountryInfo label="Top Level Domain" value={topLevelDomain} />
+                    <CountryInfo
+                      label="Currencies"
+                      value={currencies.map((currency: Currency) => currency.name).join(', ')}
+                    />
+                    <CountryInfo
+                      label="Languages"
+                      value={languages.map((language) => language.name).join(', ')}
+                    />
+                  </div>
+                </div>
+
+                {borders.length > 0 && <BorderCountries borders={borders} />}
               </div>
             </div>
-
-            <BorderCountries borders={borders} />
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </ThemeConsumer>
   );
 };
 

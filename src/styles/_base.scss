@@ -35,4 +35,9 @@ body {
 main {
   flex: 1;
   background-color: $light-mode-background-color;
+
+  &.dark {
+    background-color: $dark-mode-background-color;
+    color: $white;
+  }
 }

@@ -8,6 +8,24 @@
     margin-bottom: 0;
     font-size: rem-calc(24px);
   }
+
+  &.dark {
+    background-color: $dark-mode;
+
+    .title {
+      color: $white;
+    }
+
+    button {
+      color: $white;
+
+      &:hover,
+      &:active {
+        // background-color: lighten($color: #000000, $amount: 0);
+        background-color: $dark-mode-background-color;
+      }
+    }
+  }
 }
 
 .button {

@@ -26,5 +26,10 @@
     &:focus {
       transform: scale(1.05);
     }
+
+    &.dark {
+      color: $white;
+      background-color: $dark-mode;
+    }
   }
 }

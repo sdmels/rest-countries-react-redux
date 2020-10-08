@@ -45,11 +45,17 @@
     animation-name: dropDown;
     animation-duration: 0.3s;
     overflow: hidden;
+
+    &.dark {
+      color: $white;
+      background-color: $dark-mode;
+    }
   }
 
   &__listitem {
     padding: 0.5rem 1rem;
     cursor: pointer;
+    z-index: 10;
 
     &:first-child {
       padding-top: 1rem;
@@ -63,6 +69,15 @@
       background-color: $light-mode-background-color;
       font-weight: $font-weight-bold;
     }
+
+    &.dark:hover {
+      background-color: $dark-mode;
+    }
+  }
+
+  &.dark {
+    color: $white;
+    background-color: $dark-mode;
   }
 }
 

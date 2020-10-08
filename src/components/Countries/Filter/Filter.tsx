@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setVisibilityFilter } from './../../../actions/visibilityFilter';
 import { FaAngleDown } from 'react-icons/fa';
+import { ThemeConsumer } from '../../../Context/theme';
 
 import './Filter.scss';
 
@@ -44,25 +45,29 @@ const Filter = () => {
   };
 
   return (
-    <div className={`dropdown ${isOpen ? `open` : ``}`} ref={filterRef}>
-      <div className="dropdown__header" onClick={toggleOpen}>
-        <span>{selectedRegion || 'Filter by Region'}</span>
-        <FaAngleDown size={16} className={`dropdown__icon ${isOpen ? `open` : ``}`} />
-      </div>
-      {isOpen && (
-        <ul className="dropdown__list">
-          {REGIONS.map((region) => (
-            <li
-              className="dropdown__listitem"
-              key={region.toLocaleLowerCase()}
-              onClick={() => onRegionSelected(region)}
-            >
-              {region}
-            </li>
-          ))}
-        </ul>
+    <ThemeConsumer>
+      {(theme) => (
+        <div className={`dropdown ${theme} ${isOpen ? `open` : ``}`} ref={filterRef}>
+          <div className="dropdown__header" onClick={toggleOpen}>
+            <span>{selectedRegion || 'Filter by Region'}</span>
+            <FaAngleDown size={16} className={`dropdown__icon ${isOpen ? `open` : ``}`} />
+          </div>
+          {isOpen && (
+            <ul className={`dropdown__list  ${theme}`}>
+              {REGIONS.map((region) => (
+                <li
+                  className={`dropdown__listitem ${theme}`}
+                  key={region.toLocaleLowerCase()}
+                  onClick={() => onRegionSelected(region)}
+                >
+                  {region}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       )}
-    </div>
+    </ThemeConsumer>
   );
 };
 

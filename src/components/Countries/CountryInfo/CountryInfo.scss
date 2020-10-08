@@ -6,5 +6,14 @@
   label {
     font-weight: $font-weight-bolder;
     font-size: rem-calc(16px);
+    margin-right: rem-calc(6px);
+  }
+
+  &.dark {
+    color: $white;
+
+    span {
+      color: rgba($color: $white, $alpha: 0.7);
+    }
   }
 }

@@ -7,7 +7,6 @@
   display: flex;
   align-items: center;
   background-color: $white;
-  //   box-shadow: 0 0 0px 1px hsl(0, 19%, 92%);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
 
   svg {
@@ -27,6 +26,21 @@
     &:active,
     &:focus {
       outline: 0;
+    }
+  }
+
+  &.dark {
+    background-color: $dark-mode;
+    color: $white;
+
+    svg {
+      color: $white;
+      fill: $white;
+    }
+
+    input {
+      background-color: $dark-mode;
+      color: $white;
     }
   }
 }

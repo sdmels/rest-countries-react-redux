@@ -8,6 +8,16 @@
   font-weight: $font-weight-bold;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
+
+  &.dark {
+    color: $white;
+    background-color: $dark-mode;
+
+    &__link {
+      color: $white;
+    }
+  }
+
   &:hover {
     transform: scale(1.05);
   }
@@ -28,11 +38,8 @@
   &__body {
     padding: rem-calc(20px);
 
-    &-detail {
-      label {
-        font-weight: $font-weight-bolder;
-        font-size: rem-calc(16px);
-      }
+    &-title.dark {
+      color: $white;
     }
   }
 }
