@@ -21,7 +21,7 @@ const Countries = () => {
 
       <div className="countries__list">
         {countries.map((country) => (
-          <Card key={country.alpha2Code} country={country} />
+          <Card key={country.alpha3Code} country={country} />
         ))}
       </div>
     </div>

@@ -1,0 +1,10 @@
+@import './../../../styles/variables';
+@import './../../../styles/mixins/rem-calc';
+
+.country-info {
+  margin-bottom: 0.6rem;
+  label {
+    font-weight: $font-weight-bolder;
+    font-size: rem-calc(16px);
+  }
+}

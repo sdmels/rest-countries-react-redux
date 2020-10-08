@@ -1,0 +1,29 @@
+@import '../../../styles/mixins/rem-calc';
+@import '../../../styles/variables';
+
+.border-countries {
+  display: flex;
+  align-items: center;
+
+  strong {
+    min-width: rem-calc(150px);
+  }
+
+  &__button {
+    background-color: $white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
+    color: $light-mode-input-color;
+    padding: 0.6rem 1.6rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+    margin: 0 rem-calc(12px) rem-calc(12px) 0;
+
+    &:hover,
+    &:active,
+    &:focus {
+      transform: scale(1.05);
+    }
+  }
+}

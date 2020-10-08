@@ -4,12 +4,14 @@ export interface Countries {
   flag: string;
   name: string;
   alpha2Code: string;
+  alpha3Code: string;
   capital: string;
   region: string;
   subregion: string;
   population: number;
   borders: string[];
   nativeName: string;
+  topLevelDomain: string[];
 }
 
 export interface Language {

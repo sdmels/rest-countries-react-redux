@@ -4,29 +4,20 @@ import { Link } from 'react-router-dom';
 import Numeral from 'numeral';
 
 import './Card.scss';
+import CountryInfo from '../../components/Countries/CountryInfo/CountryInfo';
 
 const Card = ({ country }) => {
-  const { flag, name, population, region, capital, alpha2Code } = country;
+  const { flag, name, population, region, capital, alpha3Code } = country;
 
   return (
     <div className="card">
-      <Link to={`/country/${alpha2Code}`} className="card__link">
+      <Link to={`/country/${alpha3Code}`} className="card__link">
         <img className="card__flag" src={flag} alt={`country flag of ${name}`} />
         <div className="card__body">
           <h3 className="card__body-title">{name}</h3>
-          <div className="card__body-detail">
-            <label>Populations: </label>
-
-            <span>{Numeral(population).format(0, 0)}</span>
-          </div>
-          <div className="card__body-detail">
-            <label>Region: </label>
-            <span>{region}</span>
-          </div>
-          <div className="card__body-detail">
-            <label>Capital: </label>
-            <span>{capital}</span>
-          </div>
+          <CountryInfo label="Populations" value={Numeral(population).format(0, 0)} />
+          <CountryInfo label="Region" value={region} />
+          <CountryInfo label="Capital" value={capital} />
         </div>
       </Link>
     </div>
