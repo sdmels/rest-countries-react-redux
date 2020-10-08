@@ -11,9 +11,9 @@
   }
 
   &__button {
-    background-color: $white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
-    color: $light-mode-input-color;
+    background-color: $light-mode-background-color;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    color: $light-mode-text-color;
     padding: 0.6rem 1.6rem;
     text-decoration: none;
     cursor: pointer;

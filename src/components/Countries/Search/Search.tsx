@@ -23,9 +23,13 @@ const Search = () => {
       {(theme) => (
         <div className={`search_box_group ${theme}`}>
           <FaSearch size={22} />
+          <label htmlFor="search-country" className="sr-only">
+            Search a country
+          </label>
           <input
             type="text"
             name="search-country"
+            id="search-country"
             onChange={handleOnChange}
             value={searchText}
             className="search_box__input"
