@@ -1,9 +1,9 @@
-@import './../../styles/mixins/rem-calc';
-@import './../../styles/variables';
+@import '../../../styles/mixins/rem-calc';
+@import '../../../styles/variables';
 
 .search_box_group {
   height: rem-calc(50px);
-  width: 45%;
+  width: 35%;
   display: flex;
   align-items: center;
   background-color: $white;

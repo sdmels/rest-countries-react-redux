@@ -5,7 +5,14 @@
   background-color: $light-mode-background-color;
 
   &__filter-box {
-    border: 1px solid;
-    padding: rem-calc(50px);
+    padding: rem-calc(40px) 0;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    padding: 1rem 1.5rem;
   }
 }
