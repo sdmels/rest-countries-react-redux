@@ -65,9 +65,12 @@ const Country = () => {
                 <CountryInfo label="Top Level Domain" value={topLevelDomain} />
                 <CountryInfo
                   label="Currencies"
-                  value={currencies.map((currency: Currency) => currency.name)}
+                  value={currencies.map((currency: Currency) => currency.name).join(', ')}
                 />
-                <CountryInfo label="Languages" value={languages.map((language) => language.name)} />
+                <CountryInfo
+                  label="Languages"
+                  value={languages.map((language) => language.name).join(', ')}
+                />
               </div>
             </div>
 
