@@ -49,7 +49,7 @@ There are a number of ways to host your project for free. We recommend using [Ve
 
 **Have fun building!** 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is sample POC project that has been build to demonstate the ability of my tecinical skill set in React eco systm. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -88,32 +88,43 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Library used
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### IDE setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[VS Code](https://code.visualstudio.com/) is used to develop this project
 
-### Code Splitting
+#### Plugins used
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- [ESLint](https://eslint.org/) - Find and fix problems in your JavaScript code
+- [Prettier Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - It is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary. Prettier does exdents the `eslint-config-prettier` and `eslint-plugin-prettier`
+- [pretty-quick](https://github.com/azz/pretty-quick) - Runs code formatting on files changes.
+- [husky](https://github.com/typicode/husky) - Pre commit Hook - Husky can prevent bad `git commit` and `git push`
 
-### Analyzing the Bundle Size
+#### 3rd Party packages
+- [numeral](http://numeraljs.com/) - A javascript library for formatting and manipulating numbers.
+- [react-router-dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom) - DOM bindings for React Router.
+- [axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
+- [scss](https://sass-lang.com/) - CSS preprocessor. Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Archtecture
 
-### Making a Progressive Web App
+This project is build using `redux` and the binding library `react-redux` to manage the state of the application.Even though the state for this application does needs to be managed globally. A middleware of `redux-thunk` is used to perform side effets. The hooks like `useSelector`, `useDispatch`, `useHistory` & `useParams` are also used to manage connect the state and to handle the router.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### Folder Structure
 
-### Advanced Configuration
+Kept the files just 2 level depth from the project `src` folder. Enabled absolute import for more code readability.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Improvements
 
-### Deployment
+    1. Code spliting - Better way to handle styles
+    2. Better management of the errors when I able to interact with the endpoints
+    3. Add unit test cases
+    4. Enhance Types for the project
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Install
+    $ git clone https://github.com/sdmels/rest-countries-react-redux.git
+    $ cd rest-countries-react-redux
+    $ npm install
 
-### `yarn build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
