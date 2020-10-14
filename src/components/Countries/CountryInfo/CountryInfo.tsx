@@ -8,7 +8,7 @@ const CountryInfo = ({ label, value }) => {
     <ThemeConsumer>
       {(theme) => (
         <div className={`country-info ${theme}`}>
-          <label>{label}: </label>
+          <span className="label">{label}: </span>
           <span>{value}</span>
         </div>
       )}

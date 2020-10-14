@@ -3,7 +3,8 @@
 
 .country-info {
   margin-bottom: 0.6rem;
-  label {
+
+  .label {
     font-weight: $font-weight-bolder;
     font-size: rem-calc(16px);
     margin-right: rem-calc(6px);
