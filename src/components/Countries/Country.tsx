@@ -30,7 +30,7 @@ const Country = () => {
     subregion,
     currencies,
     languages,
-    borders,
+    borders = [],
     capital,
     topLevelDomain,
     flag,
